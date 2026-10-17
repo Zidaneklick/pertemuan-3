@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Mahasiswa</title>
+
+    <!-- ===== CSS INTERNAL ===== -->
+    <style>
+        /* Gaya dasar halaman: jenis huruf dan warna latar */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f8ff;
+            color: #333;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        /* Judul halaman */
+        h1 {
+            color: #1a56b0;
+            text-align: center;
+        }
+
+        /* Sub judul */
+        h2 {
+            color: #1a56b0;
+            border-bottom: 2px solid #1a56b0;
+            padding-bottom: 4px;
+        }
+
+        /* Kotak form */
+        form {
+            background: white;
+            border: 1px solid #ccd;
+            padding: 15px;
+            line-height: 2;
+        }
+
+        /* Kolom isian */
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            padding: 5px;
+            border: 1px solid #ccc;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Tombol */
+        button {
+            background: #1a56b0;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin-top: 8px;
+            cursor: pointer;
+        }
+
+        /* Tabel */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: white;
+        }
+
+        caption {
+            font-weight: bold;
+            padding: 8px;
+        }
+
+        th {
+            background: #1a56b0;
+            color: white;
+            padding: 8px;
+        }
+
+        td {
+            border: 1px solid #ccd;
+            padding: 8px;
+        }
+
+        /* CLASS: dipakai pada baris yang disorot / baris total */
+        .aktif {
+            background: #e6eefb;
+            font-weight: bold;
+        }
+
+        /* CLASS: rata tengah untuk sel angka */
+        .tengah {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== JUDUL HALAMAN ===== -->
+    <h1>Data Mahasiswa</h1>
+
+    <!-- ===== BAGIAN 1: FORM ===== -->
+    <h2>Formulir Mahasiswa</h2>
+    <form action="proses.php" method="post">
+
+        <!-- 1. Input text -->
+        Nama: <input type="text" name="nama"><br>
+
+        <!-- 2. Input email -->
+        Email: <input type="email" name="email"><br>
+
+        <!-- 3. Radio button (pilih satu) -->
+        Jenis Kelamin:
+        <input type="radio" name="jk" value="L"> Laki-laki
+        <input type="radio" name="jk" value="P"> Perempuan<br>
+
+        <!-- 4. Checkbox (pilih lebih dari satu) -->
+        Hobi:
+        <input type="checkbox" name="hobi" value="baca"> Membaca
+        <input type="checkbox" name="hobi" value="musik"> Musik
+        <input type="checkbox" name="hobi" value="olahraga"> Olahraga<br>
+
+        <!-- 5. Select / dropdown -->
+        Prodi:
+        <select name="prodi">
+            <option>Informatika</option>
+            <option>Sistem Informasi</option>
+            <option>Teknik Komputer</option>
+        </select><br>
+
+        <!-- 6. Textarea -->
+        Alamat:<br>
+        <textarea name="alamat" rows="3" cols="40"></textarea><br>
+
+        <!-- Tombol kirim dan reset -->
+        <button type="submit">Kirim</button>
+        <button type="reset">Reset</button>
+    </form>
+
+    <!-- ===== BAGIAN 2: TABEL ===== -->
+    <h2>Daftar Mahasiswa</h2>
+    <table>
+        <caption>Data 5 Mahasiswa</caption>
+
+        <!-- Baris judul kolom -->
+        <thead>
+            <tr>
+                <th>NIM</th>
+                <th>Nama</th>
+                <th>Prodi</th>
+                <th>IPK</th>
+            </tr>
+        </thead>
+
+        <!-- Baris data mahasiswa -->
+        <tbody>
+            <tr>
+                <td>252520110</td>
+                <td>Zidane</td>
+                <td>Informatika</td>
+                <td class="tengah">3.75</td>
+            </tr>
+            <tr>
+                <td>252520111</td>
+                <td>Bigman</td>
+                <td>Sistem Informasi</td>
+                <td class="tengah">3.50</td>
+            </tr>
+            <tr>
+                <td>252520112</td>
+                <td>Alpha</td>
+                <td>Teknik Komputer</td>
+                <td class="tengah">3.20</td>
+            </tr>
+            <tr>
+                <td>252520113</td>
+                <td>Harry</td>
+                <td>Informatika</td>
+                <td class="tengah">3.85</td>
+            </tr>
+            <tr>
+                <td>252520114</td>
+                <td>Rafi</td>
+                <td>Sistem Informasi</td>
+                <td class="tengah">3.40</td>
+            </tr>
+        </tbody>
+
+        <!-- Baris rata-rata: memakai colspan="3" untuk menggabungkan 3 kolom -->
+        <tfoot>
+            <tr class="aktif">
+                <td colspan="3">Rata-rata IPK</td>
+                <td class="tengah">3.54</td>
+            </tr>
+        </tfoot>
+    </table>
+
+</body>
+</html>
